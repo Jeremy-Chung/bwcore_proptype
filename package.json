@@ -1,0 +1,36 @@
+{
+  "name": "bw-prop-type",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha ./test/**/*.js",
+    "start": "nodemon app.js",
+    "lint": "eslint ./ --cache --ignore-pattern .gitignore",
+    "quiet-lint": "eslint ./ --quiet --cache --ignore-pattern .gitignore",
+    "precommit-msg": "echo 'Pre-commit checks...' && exit 0",
+    "prepush-msg": "echo 'Pre-push checks...' && exit 0"
+  },
+  "author": "Norman Chen <normanchen@bananawhale.com>",
+  "license": "ISC",
+  "pre-commit": [
+    "precommit-msg",
+    "quiet-lint"
+  ],
+  "pre-push": [
+    "prepush-msg",
+    "lint",
+    "test"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "eslint": "^4.18.1",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.9.0",
+    "mocha": "^5.0.3",
+    "pre-commit": "^1.2.2",
+    "pre-push": "^0.1.1",
+    "sinon": "^4.4.2"
+  }
+}
